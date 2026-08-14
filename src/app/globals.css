@@ -1,0 +1,255 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   DIVYA URJAA — DESIGN SYSTEM
+   Palette derived from the official emblem: teal body, saffron flame,
+   antique-gold arcs, warm ivory ground.
+   ------------------------------------------------------------------ */
+
+@theme {
+  /* — teals — */
+  --color-teal-900: #0a2a33; /* near-black teal, deepest ground   */
+  --color-teal-800: #0d3641;
+  --color-teal-700: #114350; /* deep teal — primary dark surface  */
+  --color-teal-600: #15374d; /* dark blue teal                    */
+  --color-teal-500: #1e5963; /* rich teal                         */
+  --color-teal-300: #4d838b;
+
+  /* — warms — */
+  --color-saffron: #e69236; /* accent, flame                      */
+  --color-saffron-deep: #c9751f;
+  /* saffron is only ~2.6:1 on ivory; this is the text-safe ember for small
+     accent type on light grounds (>=5:1 on both ivory and sand) */
+  --color-ember: #96580d;
+  --color-gold: #dba655; /* antique gold                         */
+  --color-gold-soft: #f6de9b; /* soft gold                        */
+
+  /* — grounds — */
+  --color-ivory: #fefefd; /* warm ivory                           */
+  --color-sand: #f6f1e7; /* secondary warm ground                 */
+  --color-sand-deep: #ece3d3;
+  --color-ink: #12333c; /* body text on light                     */
+  --color-smoke: #6b7f84; /* muted text                           */
+
+  /* — type — */
+  --font-display: var(--font-fraunces), "Iowan Old Style", Georgia, serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+
+  /* — motion — */
+  --ease-urjaa: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-flame: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* ------------------------------------------------------------------ */
+
+:root {
+  --shell: clamp(1.25rem, 5vw, 5.5rem);
+  --rhythm: clamp(5.5rem, 12vw, 11rem);
+  color-scheme: light;
+}
+
+* {
+  min-width: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: auto;
+}
+
+body {
+  background-color: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+::selection {
+  background: var(--color-saffron);
+  color: var(--color-teal-900);
+}
+
+/* ---------------- typography primitives ---------------- */
+
+.u-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-variation-settings: "SOFT" 28, "WONK" 1, "opsz" 100;
+  letter-spacing: -0.022em;
+  line-height: 0.94;
+  text-wrap: balance;
+}
+
+.u-display-tight {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-variation-settings: "SOFT" 18, "WONK" 0, "opsz" 60;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+/* eyebrow / label */
+.u-label {
+  font-family: var(--font-sans);
+  font-size: clamp(0.625rem, 0.72vw, 0.6875rem);
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.u-body {
+  font-size: clamp(1rem, 1.05vw, 1.0625rem);
+  line-height: 1.68;
+  letter-spacing: -0.005em;
+}
+
+.u-lede {
+  font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+  line-height: 1.55;
+  letter-spacing: -0.012em;
+}
+
+/* ---------------- layout primitives ---------------- */
+
+.u-shell {
+  padding-inline: var(--shell);
+  margin-inline: auto;
+  max-width: 108rem;
+  width: 100%;
+}
+
+.u-rhythm {
+  padding-block: var(--rhythm);
+}
+
+/* ---------------- reveal primitives ---------------- */
+
+.u-line-mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.06em;
+  margin-bottom: -0.06em;
+}
+
+.u-line-inner {
+  display: block;
+  will-change: transform;
+}
+
+/* film grain — applied to dark cinematic sections */
+.u-grain::after {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  pointer-events: none;
+  opacity: 0.16;
+  mix-blend-mode: overlay;
+  background-image: var(--grain-url);
+  background-size: 180px 180px;
+  animation: grainShift 0.9s steps(3) infinite;
+}
+
+@keyframes grainShift {
+  0% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(-3%, 2%);
+  }
+  66% {
+    transform: translate(2%, -3%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* A true semicircular arch for a 9:16 frame: horizontal radius is half the
+   width, and 0.5 × (9/16) = 28.1% of the height. Reads as a temple niche and
+   as the emblem's ring. Only applied where the frame is actually 9:16. */
+.u-arch {
+  border-radius: 0;
+}
+@media (min-width: 1024px) {
+  .u-arch {
+    border-radius: 50% 50% 3px 3px / 28.1% 28.1% 3px 3px;
+  }
+}
+
+/* the bloom a real flame throws — irregular, never a clean sine */
+@keyframes flameBloom {
+  0%,
+  100% {
+    opacity: 0.82;
+    transform: scale(1);
+  }
+  28% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+  46% {
+    opacity: 0.74;
+    transform: scale(0.98);
+  }
+  71% {
+    opacity: 0.95;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes scrollCue {
+  0% {
+    transform: translateX(-110%);
+  }
+  60%,
+  100% {
+    transform: translateX(340%);
+  }
+}
+
+/* focus */
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  /* two-tone so the ring stays visible on ivory and on deep teal alike */
+  outline: 2px solid var(--color-saffron);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(10, 42, 51, 0.32);
+  border-radius: 2px;
+}
+
+/* hide native cursor only where our cursor is active */
+html[data-cursor="on"] body,
+html[data-cursor="on"] a,
+html[data-cursor="on"] button {
+  cursor: none;
+}
+
+/* ---------------- reduced motion ---------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .u-grain::after {
+    animation: none;
+  }
+}
