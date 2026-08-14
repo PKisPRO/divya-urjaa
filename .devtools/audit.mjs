@@ -36,7 +36,7 @@ for (const vp of VPS) {
       if (r.status() >= 400) bad.push(`${r.status()} ${r.url()}`);
     });
 
-    await page.goto("http://localhost:3300" + route, {
+    await page.goto("https://divya-urjaa.vercel.app" + route, {
       waitUntil: "networkidle",
       timeout: 90000,
     });

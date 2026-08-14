@@ -1,6 +1,6 @@
 import { chromium } from "playwright";
 
-const BASE = "http://localhost:3300";
+const BASE = "https://divya-urjaa.vercel.app";
 const NEW_IG = "https://www.instagram.com/divya___urjaa/";
 const OLD_IG_FRAGMENT = "divya__urjaa"; // two underscores — the suspended one
 
@@ -17,7 +17,7 @@ console.log("\n[instagram]");
 {
   const page = await (await browser.newContext()).newPage();
   for (const r of ["/", "/our-story", "/urjaa-deepak", "/artisans", "/impact", "/contact"]) {
-    await page.goto(BASE + r, { waitUntil: "domcontentloaded" });
+    await page.goto(BASE + r, { waitUntil: "domcontentloaded", timeout: 90000 });
     const hrefs = await page.$$eval("a[href*='instagram']", (as) =>
       as.map((a) => a.getAttribute("href")),
     );
@@ -31,7 +31,7 @@ console.log("\n[instagram]");
   }
   // mobile menu
   const m = await (await browser.newContext({ viewport: { width: 390, height: 844 } })).newPage();
-  await m.goto(BASE + "/", { waitUntil: "networkidle" });
+  await m.goto(BASE + "/", { waitUntil: "load", timeout: 90000 });
   await m.click("button[aria-controls='mobile-menu']");
   await m.waitForTimeout(900);
   const menuIG = await m.$$eval("#mobile-menu a[href*='instagram']", (as) =>
@@ -50,7 +50,7 @@ console.log("\n[instagram]");
 console.log("\n[keyboard]");
 {
   const page = await (await browser.newContext({ viewport: { width: 1440, height: 900 } })).newPage();
-  await page.goto(BASE + "/", { waitUntil: "networkidle" });
+  await page.goto(BASE + "/", { waitUntil: "load", timeout: 90000 });
   const first = [];
   for (let i = 0; i < 10; i++) {
     await page.keyboard.press("Tab");
@@ -69,7 +69,7 @@ console.log("\n[keyboard]");
   focusRings >= 8 ? ok(`visible focus ring on ${focusRings}/10 stops`) : fail(`only ${focusRings}/10 stops show a focus ring`);
 
   // FAQ accordion keyboard operation
-  await page.goto(BASE + "/urjaa-deepak", { waitUntil: "networkidle" });
+  await page.goto(BASE + "/urjaa-deepak", { waitUntil: "load", timeout: 90000 });
   const btn = page.locator("button[aria-controls^='faq-panel-']").nth(1);
   await btn.focus();
   const before = await btn.getAttribute("aria-expanded");
@@ -89,7 +89,7 @@ console.log("\n[reduced motion]");
   const page = await ctx.newPage();
   const errs = [];
   page.on("pageerror", (e) => errs.push(e.message));
-  await page.goto(BASE + "/", { waitUntil: "networkidle" });
+  await page.goto(BASE + "/", { waitUntil: "load", timeout: 90000 });
   await page.evaluate(async () => {
     const step = Math.round(window.innerHeight * 0.8);
     for (let y = 0; y < document.body.scrollHeight; y += step) {
@@ -132,7 +132,7 @@ console.log("\n[webgl unavailable]");
   const page = await ctx.newPage();
   const errs = [];
   page.on("pageerror", (e) => errs.push(e.message));
-  await page.goto(BASE + "/", { waitUntil: "networkidle" });
+  await page.goto(BASE + "/", { waitUntil: "load", timeout: 90000 });
   await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
   await page.waitForTimeout(2500);
   const headingVisible = await page
@@ -150,7 +150,7 @@ console.log("\n[links]");
   const page = await (await browser.newContext()).newPage();
   const seen = new Set();
   for (const r of ["/", "/our-story", "/urjaa-deepak", "/artisans", "/impact", "/contact"]) {
-    await page.goto(BASE + r, { waitUntil: "domcontentloaded" });
+    await page.goto(BASE + r, { waitUntil: "domcontentloaded", timeout: 90000 });
     const hrefs = await page.$$eval("a[href^='/']", (as) =>
       as.map((a) => a.getAttribute("href")),
     );

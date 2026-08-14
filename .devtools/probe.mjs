@@ -1,7 +1,7 @@
 import { chromium } from "playwright";
 const b = await chromium.launch();
 const p = await b.newPage({ viewport: { width: 1440, height: 900 } });
-await p.goto("http://localhost:3300/our-story", { waitUntil: "load", timeout: 90000 });
+await p.goto("https://divya-urjaa.vercel.app/our-story", { waitUntil: "load", timeout: 90000 });
 await p.waitForTimeout(2000);
 const info = await p.evaluate(() => {
   const btn = document.querySelector("button[aria-label='Play the Divya Urjaa overview film']");

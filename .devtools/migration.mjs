@@ -5,7 +5,7 @@ import { chromium } from "playwright";
  * rebuilt site. Text is normalised (quotes, dashes, whitespace) before matching.
  */
 
-const BASE = "http://localhost:3300";
+const BASE = "https://divya-urjaa.vercel.app";
 const ROUTES = ["/", "/our-story", "/urjaa-deepak", "/artisans", "/impact", "/contact"];
 
 const TEXT = [

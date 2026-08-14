@@ -1,7 +1,7 @@
 import { chromium } from "playwright";
 const b = await chromium.launch();
 const p = await b.newPage({ viewport: { width: 1440, height: 900 } });
-await p.goto("http://localhost:3300/", { waitUntil: "networkidle", timeout: 90000 });
+await p.goto("https://divya-urjaa.vercel.app/", { waitUntil: "networkidle", timeout: 90000 });
 await p.evaluate(async () => {
   const step = Math.round(window.innerHeight * 0.6);
   for (let y = 0; y < document.body.scrollHeight; y += step) {

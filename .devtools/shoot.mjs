@@ -31,7 +31,7 @@ for (const vp of viewports) {
   });
   page.on("pageerror", (e) => errors.push("PAGEERROR: " + e.message));
 
-  await page.goto("http://localhost:3300" + route, {
+  await page.goto("https://divya-urjaa.vercel.app" + route, {
     waitUntil: "networkidle",
     timeout: 90000,
   });
