@@ -18,7 +18,7 @@ import { FlameGlyph } from "@/components/brand/Geometry";
 export const metadata: Metadata = {
   title: "Urjaa Deepak — The sacred diya, reimagined",
   description:
-    "₹399 per box. Each box contains 30 Urjaa Deepaks with wick, one clay diya and camphor. Handmade from cow dung, sesame, natural herbs and havan samagri by 50+ women artisans in Rajasthan.",
+    "₹399 per box. Each box contains 30 Urjaa Deepaks with wick, one clay diya and camphor. Handmade from cow dung, sesame and over 200 plus natural herbs and ingredients, and havan samagri by 50+ women artisans in Rajasthan.",
   alternates: { canonical: `${SITE_URL}/urjaa-deepak` },
 };
 
@@ -28,7 +28,7 @@ const productSchema = {
   name: product.name,
   sku: product.sku,
   description:
-    "A handmade diya of cow dung, sesame, natural herbs and havan samagri, crafted by 50+ women artisans in a Rajasthan village. Each box contains 30 Urjaa Deepaks with wick, one clay diya and camphor.",
+    "A handmade diya of cow dung, sesame and over 200 plus natural herbs and ingredients, and havan samagri, crafted by 50+ women artisans in a Rajasthan village. Each box contains 30 Urjaa Deepaks with wick, one clay diya and camphor.",
   image: [`${SITE_URL}/images/product/box-open.jpg`],
   brand: { "@type": "Brand", name: "Divya Urjaa" },
   offers: {

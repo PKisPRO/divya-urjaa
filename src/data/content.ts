@@ -167,7 +167,7 @@ export const product = {
 
 export const ingredients = {
   label: "Inside the Deepak",
-  lead: "Each Urjaa Deepak brings together cow dung, sesame, natural herbs, and havan samagri — blended by hand so the burn stays true to the ritual.",
+  lead: "Each Urjaa Deepak brings together cow dung, sesame and over 200 plus natural herbs and ingredients, and havan samagri — blended by hand so the burn stays true to the ritual.",
   items: [
     {
       name: "Cow Dung",
@@ -183,7 +183,7 @@ export const ingredients = {
     },
   ],
   /** Named in the product lead sentence on the old site. */
-  also: "Sesame",
+  also: "Sesame and Over 200 Plus Natural Herbs and Ingredients",
   closing:
     "The full recipe also includes many other natural ingredients, each chosen for how it burns, how it smells, and how it serves the ritual — nothing chemical, nothing hidden.",
 } as const;
@@ -279,7 +279,7 @@ export const journey = {
     {
       n: "02",
       title: "Shaped by hand",
-      body: "Cow dung, sesame, natural herbs and havan samagri are blended and pressed into shape by hand — no machines, no moulds beyond a simple tray.",
+      body: "Cow dung, sesame and over 200 plus natural herbs and ingredients, and havan samagri are blended and pressed into shape by hand — no machines, no moulds beyond a simple tray.",
       image: "/images/process/shaping.jpg",
       alt: "Three women shaping Urjaa Deepaks by hand, with a bowl of natural ingredients beside them",
     },
