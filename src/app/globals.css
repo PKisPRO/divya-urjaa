@@ -191,6 +191,34 @@ html.lenis body {
   }
 }
 
+/* ---------------- portrait frames ---------------- */
+
+/* Varied silhouettes so a page of portraits never reads as a card grid.
+   Mobile keeps every frame a straight crop — shaped edges eat too much of a
+   small portrait, and a dome on a 340px-wide photo crops the face. */
+
+.u-frame-arch,
+.u-frame-cut {
+  border-radius: 2px;
+}
+
+@media (min-width: 768px) {
+  /* the temple niche, and the emblem's ring, read into the same dome */
+  .u-frame-arch {
+    border-radius: 50% 50% 2px 2px / 26% 26% 2px 2px;
+  }
+  /* one corner taken off — an editorial folio mark, not a rounded card */
+  .u-frame-cut {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 3.5rem) 0,
+      100% 3.5rem,
+      100% 100%,
+      0 100%
+    );
+  }
+}
+
 /* the bloom a real flame throws — irregular, never a clean sine */
 @keyframes flameBloom {
   0%,

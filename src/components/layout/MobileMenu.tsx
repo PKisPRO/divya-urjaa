@@ -55,7 +55,7 @@ export default function MobileMenu({
           </div>
 
           <nav
-            className="u-shell flex flex-1 flex-col justify-center gap-1"
+            className="u-shell flex flex-1 flex-col justify-center gap-1 overflow-y-auto py-4"
             aria-label="Mobile"
           >
             {nav.map((item, i) => (
@@ -74,7 +74,7 @@ export default function MobileMenu({
                   <Link
                     href={item.href}
                     onClick={onClose}
-                    className="u-display block py-1.5 text-[clamp(2.6rem,12vw,4rem)] text-ivory"
+                    className="u-display block py-1.5 text-[clamp(2.15rem,10vw,3.5rem)] text-ivory"
                   >
                     {item.label}
                   </Link>

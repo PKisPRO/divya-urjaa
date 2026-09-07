@@ -28,6 +28,7 @@ export const nav = [
   { label: "Our Story", href: "/our-story" },
   { label: "Urjaa Deepak", href: "/urjaa-deepak" },
   { label: "Artisans", href: "/artisans" },
+  { label: "Team", href: "/team" },
   { label: "Impact", href: "/impact" },
   { label: "Contact", href: "/contact" },
 ] as const;

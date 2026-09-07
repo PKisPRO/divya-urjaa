@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/urjaa-deepak", priority: 0.9 },
     { path: "/our-story", priority: 0.8 },
     { path: "/artisans", priority: 0.8 },
+    { path: "/team", priority: 0.7 },
     { path: "/impact", priority: 0.8 },
     { path: "/contact", priority: 0.6 },
   ];
