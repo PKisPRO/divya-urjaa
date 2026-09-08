@@ -111,9 +111,11 @@ the typography or layout.
 | ₹399 per box, SKU UD-001, quantity picker, In stock · ready to ship | Product page purchase block |
 | "Each box contains 30 Urjaa Deepaks with wick, one clay diya…, and camphor (kapoor)." | What's in each box |
 | "Checkout with bank transfer or UPI · upload payment screenshot" | Purchase note — preserved verbatim |
-| Ingredients: cow dung, sesame, natural herbs, havan samagri + per-ingredient bodies | Ingredient experience |
+| Ingredients: cow dung, natural herbs, havan samagri + per-ingredient bodies | Ingredient experience |
 | "The full recipe also includes many other natural ingredients…" | Ingredient closing note |
 | 4-image gallery | Product gallery |
+
+> One ingredient carried over from the old site was later found to be inaccurate and was removed sitewide as a factual correction. The approved list is `ingredients` in `src/data/content.ts` — treat it as the only source.
 
 ### Old `/impact`
 

@@ -5,7 +5,7 @@ import ProductExperience from "@/components/home/ProductExperience";
 import IngredientExperience from "@/components/home/IngredientExperience";
 import JourneySequence from "@/components/home/JourneySequence";
 import ArtisanSequence from "@/components/home/ArtisanSequence";
-import VideoStory from "@/components/home/VideoStory";
+import ScienceStory from "@/components/home/ScienceStory";
 import ImpactStory from "@/components/home/ImpactStory";
 import CorporateGifting from "@/components/home/CorporateGifting";
 import RitualSequence from "@/components/home/RitualSequence";
@@ -29,7 +29,7 @@ export default function Home() {
       <JourneySequence />
 
       <ArtisanSequence />
-      <VideoStory compact />
+      <ScienceStory />
 
       <ImpactStory />
       <CorporateGifting />

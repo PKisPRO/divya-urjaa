@@ -65,7 +65,9 @@ const TEXT = [
   ["A thoughtful blend of dried herbs", "ingredient 2 body"],
   ["Havan Samagri", "ingredient 3"],
   ["so the smoke carries the intention of yajna", "ingredient 3 body"],
-  ["Sesame", "ingredient 4"],
+  // A fourth ingredient listed on the old site is deliberately absent: it is
+  // not used in Urjaa Deepak and was removed sitewide as a factual correction.
+  // Do not re-add an assertion for it.
   ["The full recipe also includes many other natural ingredients", "ingredient closing"],
 
   // — ritual —

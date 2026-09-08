@@ -372,64 +372,6 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* ── BEHIND EVERY ORDER ────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-teal-900 text-ivory u-rhythm">
-        <div className="pointer-events-none absolute right-[-14%] top-[-10%] h-[44vh] w-[44vh] rounded-full bg-gold/10 blur-[120px]" />
-
-        <div className="u-shell relative">
-          <div className="grid gap-x-14 gap-y-6 lg:grid-cols-12">
-            <Reveal as="p" className="u-label text-saffron lg:col-span-3">
-              {teamPage.operations.label}
-            </Reveal>
-            <div className="lg:col-span-9">
-              <RevealText
-                as="h2"
-                lines={teamPage.operations.lines}
-                className="u-display text-[clamp(2.1rem,4.8vw,4rem)]"
-              />
-              <Reveal
-                as="p"
-                delay={0.1}
-                className="u-lede mt-7 max-w-2xl text-ivory/65"
-              >
-                {teamPage.operations.support}
-              </Reveal>
-            </div>
-          </div>
-
-          <div className="mt-[clamp(3rem,6vw,5rem)] grid gap-x-10 gap-y-8 lg:grid-cols-12">
-            <figure className="lg:col-span-7">
-              <ImageReveal
-                src={teamPage.operations.image}
-                alt={teamPage.operations.imageAlt}
-                width={1024}
-                height={1024}
-                sizes="(max-width: 1024px) 92vw, 56vw"
-                className="aspect-square w-full"
-                quality={90}
-              />
-              <figcaption className="u-label mt-4 text-[10px] text-ivory/40">
-                {teamPage.operations.caption}
-              </figcaption>
-            </figure>
-
-            {/* the detail, dropped a beat lower — depth from the stagger */}
-            <div className="w-[62%] max-w-[19rem] lg:col-span-4 lg:col-start-9 lg:mt-[22%] lg:w-full lg:max-w-none">
-              <ImageReveal
-                src={teamPage.operations.inset}
-                alt={teamPage.operations.insetAlt}
-                width={1024}
-                height={1024}
-                sizes="(max-width: 1024px) 62vw, 30vw"
-                className="aspect-square w-full ring-1 ring-ivory/15"
-                delay={0.15}
-                quality={88}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ── CLOSING ───────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-teal-700 text-ivory u-rhythm">
         <RayBurst

@@ -111,7 +111,7 @@ export const team: readonly TeamMember[] = [
   {
     id: "ativeer-dhoka",
     name: "Ativeer Dhoka",
-    role: "Outreach Head",
+    role: "Founder & Outreach Head",
     bio: "Works directly with businesses, wholesalers and potential buyers to introduce Divya Urjaa Deepaks, build relationships and create new sales opportunities.",
     image: null,
     imageAlt: null,
@@ -187,20 +187,6 @@ export const teamPage = {
     imageAlt:
       "The closed Urjaa Deepak box in a red block-printed sleeve reading Empowering Rural Women",
     caption: "The box the team introduces to buyers",
-  },
-
-  operations: {
-    label: "Operations & logistics",
-    lines: ["Behind every order", "is coordination."],
-    support:
-      "From managing logistics and sales records to keeping outreach and fulfilment on track, the Junior Wing helps turn the organisation’s work into consistent execution.",
-    image: "/images/product/box-contents.jpg",
-    imageAlt:
-      "The full contents of one Urjaa Deepak box laid out — five packs of deepaks, camphor, a terracotta diya and decorative stones",
-    caption: "What goes into every box",
-    inset: "/images/product/deepaks-flatlay.jpg",
-    insetAlt:
-      "Handmade Urjaa Deepaks with cotton wicks, packed and photographed from above",
   },
 
   closing: {
