@@ -24,12 +24,14 @@ export default function Home() {
         <Benefits />
       </EnergyPath>
 
+      {/* the proof, straight after the three blessings it backs */}
+      <ScienceStory />
+
       <ProductExperience />
       <IngredientExperience />
       <JourneySequence />
 
       <ArtisanSequence />
-      <ScienceStory />
 
       <ImpactStory />
       <CorporateGifting />

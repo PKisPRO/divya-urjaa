@@ -177,18 +177,6 @@ export const teamPage = {
     formed: "Formed in 2025",
   },
 
-  outreach: {
-    label: "Outreach",
-    lines: ["Outreach means going out", "and creating the market."],
-    support:
-      "The team approaches wholesalers, retailers and businesses directly, builds relationships and introduces Divya Urjaa Deepaks to potential buyers.",
-    /** real product photography — the box that is actually carried to a buyer */
-    image: "/images/product/box-closed.jpg",
-    imageAlt:
-      "The closed Urjaa Deepak box in a red block-printed sleeve reading Empowering Rural Women",
-    caption: "The box the team introduces to buyers",
-  },
-
   closing: {
     lines: ["Different roles.", "One shared purpose."],
     support:

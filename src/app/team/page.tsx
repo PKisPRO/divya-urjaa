@@ -7,7 +7,6 @@ import ArcRule from "@/components/team/ArcRule";
 import MotionScope from "@/components/team/MotionScope";
 import Reveal from "@/components/ui/Reveal";
 import RevealText from "@/components/ui/RevealText";
-import ImageReveal from "@/components/ui/ImageReveal";
 import MagneticButton from "@/components/ui/MagneticButton";
 import { RayBurst } from "@/components/brand/Geometry";
 
@@ -331,46 +330,6 @@ export default function TeamPage() {
           </section>
         );
       })}
-
-      {/* ── WHAT OUTREACH ACTUALLY MEANS ──────────────────────────── */}
-      <section className="relative overflow-hidden bg-ivory u-rhythm">
-        <ArcRule
-          className="u-shell absolute inset-x-0 top-[clamp(1.5rem,4vw,3rem)]"
-          tone="dark"
-          flip
-        />
-
-        <div className="u-shell relative grid items-center gap-x-14 gap-y-12 lg:grid-cols-12">
-          <div className="lg:col-span-5 lg:col-start-1">
-            <Reveal as="p" className="u-label text-ember">
-              {teamPage.outreach.label}
-            </Reveal>
-            <RevealText
-              as="h2"
-              lines={teamPage.outreach.lines}
-              className="u-display mt-5 text-[clamp(1.9rem,4vw,3.1rem)] text-teal-700"
-            />
-            <Reveal as="p" delay={0.1} className="u-body mt-7 max-w-lg text-ink/75">
-              {teamPage.outreach.support}
-            </Reveal>
-          </div>
-
-          <figure className="lg:col-span-5 lg:col-start-8">
-            <ImageReveal
-              src={teamPage.outreach.image}
-              alt={teamPage.outreach.imageAlt}
-              width={1024}
-              height={1024}
-              sizes="(max-width: 1024px) 92vw, 40vw"
-              className="aspect-square w-full"
-              quality={90}
-            />
-            <figcaption className="u-label mt-4 text-[10px] text-smoke">
-              {teamPage.outreach.caption}
-            </figcaption>
-          </figure>
-        </div>
-      </section>
 
       {/* ── CLOSING ───────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-teal-700 text-ivory u-rhythm">

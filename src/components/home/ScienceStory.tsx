@@ -9,10 +9,11 @@ import { BrokenRing } from "@/components/brand/Geometry";
  * Same approved copy as the `/urjaa-deepak` section — one `science` object in
  * content.ts feeds both, so no claim can drift between them. The composition
  * differs on purpose: the product page states the science on sand, at length,
- * to a reader already deciding. Here it lands between the artisans and the
- * impact story, so it runs on the deep-teal ground those sections hand it,
- * leads with the two figures, and keeps the closing line as a left rail
- * rather than a footer — a held beat in the scroll, not a second essay.
+ * to a reader already deciding. Here it follows Benefits directly — the proof
+ * arriving straight after the three blessings it backs — so it cuts to deep
+ * teal between two light sections, leads with the two figures, and keeps the
+ * closing line as a left rail rather than a footer: a held beat in the
+ * scroll, not a second essay.
  */
 export default function ScienceStory() {
   return (
